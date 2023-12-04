@@ -8,7 +8,7 @@ import Logo from '../assets/logo.svg';
 export default function Header() {
   return (
     <header className="flex max-w-7xl justify-between items-center p-4">
-      <div className="flex p-4">
+      <div className="flex">
         <Image src={Logo} alt="Logotipo" priority />
       </div>
       <nav className="flex items-center justify-center text-center">
