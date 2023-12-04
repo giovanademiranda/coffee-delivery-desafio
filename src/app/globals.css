@@ -5,14 +5,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Roboto:wght@400;700&display=swap");
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: rgb(250, 249, 249)
+  --background-start-rgb: rgb(250, 249, 249)
+  --background-end-rgb: rgb(250, 249, 249)
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --foreground-rgb: rgb(250, 249, 249)
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
