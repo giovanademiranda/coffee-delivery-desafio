@@ -1,8 +1,10 @@
 'use client'
 
+import Coffe from '@/components/Coffee';
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
 import Image from 'next/image';
 import CoffeeImg from '../../assets/coffee.svg';
+import { DataProducts } from '../data';
 
 export default function Home() {
   return (
@@ -46,6 +48,10 @@ export default function Home() {
           </div>
         </div>
         <Image src={CoffeeImg} alt='Café' />
+      </div>
+      <h2>Nossos cafés</h2>
+      <div className="grid grid-rows-4-21 gap-4 mt-10">
+        {DataProducts.map((product) => <Coffe key={product.id} product={product} />)}
       </div>
     </div>
   )
