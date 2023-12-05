@@ -31,8 +31,8 @@ const config: Config = {
         'yellow-light': '#f0e8c9',
       },
       fontFamily: {
-        'Baloo 2': ['"Baloo 2"', 'cursive'],
-        'Roboto': ['"Roboto"', 'sans-serif'],
+        'baloo': ['"Baloo 2"', 'cursive'],
+        'roboto': ['"Roboto"', 'sans-serif'],
       },
     },
   },
