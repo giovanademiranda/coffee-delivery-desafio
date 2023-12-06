@@ -3,7 +3,7 @@
 import { MapPin, ShoppingCart } from '@phosphor-icons/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../assets/logo.svg';
+import Logo from '../../assets/logo.svg';
 
 export default function Header() {
   return (
