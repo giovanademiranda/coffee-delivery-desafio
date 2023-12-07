@@ -115,7 +115,7 @@ export default function Checkout({ product }: { product: Product }) {
                 <p className="text-xl font-bold text-subtitle">Total</p>
                 <p className="text-xl font-bold text-subtitle">R$ <span>9,90</span></p>
               </div>
-              <Link href="/success" type="submit" className="flex items-center justify-center bg-yellow hover:bg-yellow-light p-3 rounded-md">
+              <Link href="/success" type="submit" className="flex items-center justify-center bg-yellow hover:bg-yellow-dark p-3 rounded-md">
                 <p className="text-white text-sm font-bold">CONFIRMAR PEDIDO</p>
               </Link>
             </div>
