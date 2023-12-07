@@ -31,7 +31,7 @@ const config: Config = {
         'yellow-light': '#f0e8c9',
       },
       fontFamily: {
-        'Baloo 2': ['Baloo 2', 'sans-serif'],
+        'Baloo': ['Baloo', 'cursive'],
         'Roboto': ['Roboto', 'sans-serif'],
       },
       gridTemplateColumns: {
