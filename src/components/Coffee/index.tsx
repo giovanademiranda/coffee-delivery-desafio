@@ -27,14 +27,14 @@ export default function Coffee({ product }: { product: Product }) {
       <div className="flex flex-col w-full py-4 items-center">
         <div className="flex gap-2 mb-2">{product.tags.map((tag, index) => <p className="flex justify-center items-center py-1 px-2 text-yellow-dark font-bold text-xs rounded-full bg-yellow-light" key={index}>{tag.toUpperCase()}</p>)}
         </div>
-        <h3 className="text-subtitle text-center font-Baloo 2 text-lg font-bold leading-7">{product.title}</h3>
+        <h3 className="text-subtitle text-center font-Baloo text-lg font-bold leading-7">{product.title}</h3>
         <p className="text-label text-center text-sm leading-7">{product.description}</p>
       </div>
       <div className="flex w-64 justify-between">
-        <div className="flex font-Baloo 2 text-2xl font-bold leading-6 text-text">
+        <div className="flex font-Baloo text-2xl font-bold leading-6 text-text">
           <span className="flex justify-center items-center">
             <p className="text-text text-sm leading-7 font-bold">R$</p>
-            <h3 className="font-Baloo 2 text-2xl text-text leading-6 font-extrabold">{product.value.toFixed(2)}</h3>
+            <h3 className="font-Baloo text-2xl text-text leading-6 font-extrabold">{product.value.toFixed(2)}</h3>
           </span>
         </div>
         <div className="flex gap-4 justify-center items-center p-2 rounded-md bg-button text-text border-0">

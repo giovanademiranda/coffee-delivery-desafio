@@ -16,11 +16,9 @@ export default function Header() {
           <MapPin size={24} color="#8047F8" weight="fill" />
           <p className='text-sm text-center text-purple-dark leading-6'>Sorocaba-SP</p>
         </div>
-        <Link href="/cart">
-          <div className="flex relative p-2 justify-center items-center gap-1 m-2 rounded-md bg-yellow-light">
-            <ShoppingCart size={24} color="#C47F17" weight="fill" />
-            <p className='absolute flex justify-center items-center -top-2 -right-2 w-5 h-5 text-center text-white rounded-full bg-yellow-dark text-sm'>3</p>
-          </div>
+        <Link href="/cart" className="flex relative p-2 justify-center items-center gap-1 m-2 rounded-md bg-yellow-light">
+          <ShoppingCart size={24} color="#C47F17" weight="fill" />
+          <p className='absolute flex justify-center items-center -top-2 -right-2 w-5 h-5 text-center text-white rounded-full bg-yellow-dark text-sm'>3</p>
         </Link>
       </nav>
     </header>
