@@ -3,11 +3,11 @@
 import { MapPin, ShoppingCart } from '@phosphor-icons/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../assets/logo.svg';
+import Logo from '../../assets/logo.svg';
 
 export default function Header() {
   return (
-    <header className="flex max-w-7xl justify-between items-center p-4">
+    <header className="flex max-w-7xl justify-between items-center p-5">
       <div className="flex">
         <Image src={Logo} alt="Logotipo" priority />
       </div>
