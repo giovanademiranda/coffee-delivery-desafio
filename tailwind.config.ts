@@ -34,6 +34,12 @@ const config: Config = {
         'Baloo 2': ['Baloo 2', 'sans-serif'],
         'Roboto': ['Roboto', 'sans-serif'],
       },
+      gridTemplateColumns: {
+        'fill-17': 'repeat(auto-fill, 17rem)',
+      },
+      gridTemplateRows: {
+        '4-21': 'repeat(4, 21rem)',
+      },
     },
   },
   plugins: [],

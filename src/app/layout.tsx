@@ -1,3 +1,4 @@
+import Header from '@/components/Header'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -13,7 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="flex w-screen items-center justify-center">{children}</body>
+      <body className="flex w-screen items-center justify-center">
+        <div className="wfull">
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   )
 }

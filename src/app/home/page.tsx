@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/components/Header';
 import { Package, ShoppingCart, Timer } from '@phosphor-icons/react';
 import Image from 'next/image';
 import CartImg from '../../assets/cart.svg';
@@ -10,9 +9,8 @@ import { DataProducts } from '../data';
 
 export default function Home() {
   return (
-    <div className="max-w-7xl w-full flex flex-col items-center justify-center pl-4 py-4 ">
-      <Header />
-      <div className="flex w-full justify-center items-center my-20">
+    <div className="max-w-7xl w-full flex flex-col items-center justify-center px-4 py-4 ">
+      <div className="flex w-full justify-center items-center mb-14 mt-4">
         <div className="flex flex-col gap-8">
           <h1 className='w-[90%] font-Baloo 2 text-title text-5xl font-bold leading-10'>Encontre o café perfeito para qualquer hora do dia</h1>
           <p className='text-lg leading-7 text-subtitle'>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
@@ -52,13 +50,12 @@ export default function Home() {
         </div>
         <Image src={CoffeeImg} alt='Café' />
       </div>
-      <div className="flex w-full mb-4">
+      <div className="flex w-full">
         <h2 className='font-Baloo 2 font-bold text-3xl text-subtitle'>Nossos cafés</h2>
       </div>
-      <div className="w-full grid grid-cols-4 gap-20 mt-10">
+      <div className="w-full grid grid-cols-4 gap-8 mt-10">
         {DataProducts.map(
-          (product) =>
-            <Coffee key={product.id} product={product} />
+          (product) => <Coffee key={product.id} product={product} />
         )}
       </div>
     </div>
