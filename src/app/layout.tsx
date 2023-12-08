@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import { CartProvider } from '@/context/CartContext'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -16,8 +17,10 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className="flex w-screen items-center justify-center">
         <div>
-          <Header />
-          {children}
+          <CartProvider>
+            <Header />
+            {children}
+          </CartProvider>
         </div>
       </body>
     </html>
