@@ -1,18 +1,23 @@
-import Product from "@/app/data";
+'use client'
+
 import { Minus, Plus, ShoppingCart } from "@phosphor-icons/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import Product from "../../app/data";
+import { CartContext } from '../../context/CartContext/index';
 
 export default function Coffee({ product }: { product: Product }) {
   const [cart, setCart] = useState<Product[]>([]);
   const [counter, setCounter] = useState(0);
+  const { addProduct } = useContext(CartContext);
 
   const addToCart = () => {
     if (counter > 0) {
-      setCart(prevCart => [...prevCart, { ...product, quantity: counter }]);
+      addProduct(product.id, counter);
       setCounter(0);
     }
   };
+
   const increase = () => {
     setCounter(count => count + 1);
   };
@@ -43,8 +48,9 @@ export default function Coffee({ product }: { product: Product }) {
           <Plus size={14} onClick={increase} />
         </div>
         <button className="flex p-2 justify-center items-center gap-2 rounded-md bg-purple-dark border-0" type="submit" onClick={addToCart}>
-          {/* {cart.map((_item, index) => key = { index })} */}
-          <ShoppingCart size={24} color="#faf9f9" weight="fill" />
+          {cart.map((_item, index) => (
+            <ShoppingCart key={index} size={24} color="#faf9f9" weight="fill" />
+          ))}
         </button>
       </div>
     </div>
