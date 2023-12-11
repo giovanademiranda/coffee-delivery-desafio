@@ -5,7 +5,6 @@ import Product from "../../app/data";
 import { CartContext } from '../../context/CartContext/index';
 
 export default function Coffee({ product }: { product: Product }) {
-  const [cart, setCart] = useState<Product[]>([]);
   const [counter, setCounter] = useState(1);
   const { addProduct } = useContext(CartContext);
 
