@@ -15,8 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="flex w-screen items-center justify-center">
-        <div>
+      <body className="flex w-screen h-screen justify-center">
+        <div className='w-full max-w-7xl'>
           <CartProvider>
             <Header />
             {children}
