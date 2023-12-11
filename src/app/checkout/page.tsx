@@ -76,9 +76,9 @@ export default function Checkout({ product }: { product: Product }) {
                   <h3 className="text-base text-subtitle">{product.title}</h3>
                   <div className="flex flex-row gap-2">
                     <div className="flex gap-2 justify-center items-center p-1 rounded-md bg-button text-text">
-                      <Minus size={16} color='#7f46f7' onClick={() => decreaseQuantity(product.id)} />
+                      <Minus size={14} color='#7f46f7' onClick={() => decreaseQuantity(product.id)} />
                       <p className="text-title text-base leading-6">{product.quantity}</p>
-                      <Plus size={16} color='#7f46f7' onClick={() => increaseQuantity(product.id)} />
+                      <Plus size={14} color='#7f46f7' onClick={() => increaseQuantity(product.id)} />
                     </div>
                     <button type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md" onClick={() => removeProduct(product.id)}>
                       <Trash size={16} color='#7f46f7' />
