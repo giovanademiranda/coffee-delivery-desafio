@@ -1,14 +1,15 @@
 'use client'
 
-import { ReactNode, createContext, useState } from 'react';
+import useStateLocal from '@/app/hooks/useStateLocal';
+import { ReactNode, createContext } from 'react';
 import Product, { getProductById } from '../../app/data';
 
-interface CartProduct extends Product {
+export interface CartProduct extends Product {
   id: number;
   quantity: number;
 }
 
-interface CartContextData {
+export interface CartContextData {
   cart: CartProduct[],
   addProduct: (id: number, quantity: number) => void,
   removeProduct: (id: number) => void,
@@ -19,7 +20,7 @@ interface CartContextData {
 export const CartContext = createContext<CartContextData>({} as CartContextData)
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartProduct[]>([]);
+  const [cart, setCart] = useStateLocal();
 
   const addProduct = (id: number, quantity: number) => {
     const product = getProductById(id);

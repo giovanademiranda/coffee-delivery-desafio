@@ -9,7 +9,7 @@ import InputMask from "react-input-mask";
 import Product from "../data";
 
 export default function Checkout({ product }: { product: Product }) {
-  const { cart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
+  const { cart, increaseQuantity, decreaseQuantity, removeProduct } = useContext(CartContext);
 
   return (
     <div className="max-w-7xl w-full flex justify-between p-4">
@@ -47,18 +47,18 @@ export default function Checkout({ product }: { product: Product }) {
                 <p className="text-sm text-text">O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
               </div>
             </div>
-            <div className="w-full flex flex-row gap-3">
-              <button type="submit" className="w-[33%] flex flex-row p-2 gap-1 items-center justify-center hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple bg-button rounded-lg">
+            <div className="w-full flex flex-row gap-4">
+              <button type="submit" className="w-[33%] flex flex-row p-4 gap-1 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple bg-button rounded-lg">
                 <CreditCard size={20} color='#7f46f7' />
-                <p className="text-xs text-text">CARTÃO DE CRÉDITO</p>
+                <p className="text-sm text-text">CARTÃO DE CRÉDITO</p>
               </button>
-              <button type="submit" className="w-[33%] flex flex-row p-2 gap-1 items-center justify-center hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple  bg-button rounded-lg">
+              <button type="submit" className="w-[33%] flex flex-row p-4 gap-1 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple  bg-button rounded-lg">
                 <Bank size={20} color='#7f46f7' />
-                <p className="text-xs text-text">CARTÃO DE DÉBITO</p>
+                <p className="text-sm text-text">CARTÃO DE DÉBITO</p>
               </button>
               <button type="submit" className="w-[33%] flex flex-row p-4 gap-3 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple  bg-button rounded-lg">
                 <Money size={20} color='#7f46f7' />
-                <p className="text-xs text-text">DINHEIRO</p>
+                <p className="text-sm text-text">DINHEIRO</p>
               </button>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function Checkout({ product }: { product: Product }) {
                       <p className="text-title text-base leading-6">{product.quantity}</p>
                       <Plus size={16} color='#7f46f7' onClick={() => increaseQuantity(product.id)} />
                     </div>
-                    <button type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md">
+                    <button type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md" onClick={() => removeProduct(product.id)}>
                       <Trash size={16} color='#7f46f7' />
                       <p className="text-text text-xs">REMOVER</p>
                     </button>
