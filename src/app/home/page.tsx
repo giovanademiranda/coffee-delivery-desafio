@@ -1,8 +1,7 @@
 'use client'
 
-import { Package, ShoppingCart, Timer } from '@phosphor-icons/react';
+import { Coffee as Cafe, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
 import Image from 'next/image';
-import CartImg from '../../assets/cart.svg';
 import CoffeeImg from '../../assets/coffee.svg';
 import Coffee from '../../components/Coffee';
 import { DataProducts } from '../data';
@@ -38,7 +37,7 @@ export default function Home() {
               </div>
               <div className="flex p-2 justify-center items-center mr-4">
                 <div className="flex p-2 justify-center items-center mr-4 rounded-full bg-purple">
-                  <Image src={CartImg} width={16} height={16} alt={''} />
+                  <Cafe size={16} color='#faf9f9' weight="fill" />
                 </div>
                 <p>O café chega fresquinho até você</p>
               </div>
