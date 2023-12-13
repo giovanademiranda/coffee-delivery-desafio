@@ -44,7 +44,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Image src={CoffeeImg} alt='Café' />
+        <Image src={CoffeeImg} alt='Café' priority />
       </div>
       <div className="flex w-full">
         <h2 className='font-Baloo font-bold text-3xl text-subtitle'>Nossos cafés</h2>
