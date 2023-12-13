@@ -50,27 +50,6 @@ export default function Checkout({ product }: { product: Product }) {
 
   }
 
-  // useEffect(() => {
-  //   const cepPesquisa = cep.replace('-', '');
-  //   console.log(cepPesquisa)
-  //   if (cepPesquisa && endereco.cep !== cepPesquisa && cepPesquisa.length === 8) {
-  //     cepBrasil(cepPesquisa)
-  //       .then((response) => {
-  //         setEndereco({
-  //           ...endereco,
-  //           cep,
-  //           rua: response.street,
-  //           bairro: response.neighborhood,
-  //           cidade: response.city,
-  //           uf: response.state
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  // }, [cep, endereco]);
-
   return (
     <div className="max-w-7xl w-full flex justify-between p-4">
       <div className="flex flex-col w-[60%]">
@@ -87,7 +66,7 @@ export default function Checkout({ product }: { product: Product }) {
             <InputMask mask="99999-999" className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" name="CEP" id="CEP" placeholder="CEP" required value={cep} onChange={handleCEP} onBlur={searchCEP} />
             <input className="p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="RUA" id="RUA" placeholder="RUA" required value={endereco.rua} onChange={(e) => setEndereco({ ...endereco, rua: e.target.value })} />
             <div className="flex gap-3">
-              <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="number" name="Numero" id="Numero" placeholder="Número" required value={endereco.numero} />
+              <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="number" name="Numero" id="Numero" placeholder="Número" required />
               <input className="w-[60%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="Complemento" id="Complemento" placeholder="Complemento" />
             </div>
             <div className="flex gap-3">
