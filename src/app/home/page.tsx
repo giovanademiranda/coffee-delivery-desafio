@@ -1,6 +1,4 @@
-'use client'
-
-import { Coffee as Cafe, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
+import { Coffee as Cafe, Package, ShoppingCart, Timer } from '@phosphor-icons/react/dist/ssr';
 import Image from 'next/image';
 import CoffeeImg from '../../assets/coffee.svg';
 import Coffee from '../../components/Coffee';
@@ -49,7 +47,7 @@ export default function Home() {
       <div className="flex w-full">
         <h2 className='font-Baloo font-bold text-3xl text-subtitle'>Nossos cafés</h2>
       </div>
-      <div className="w-full grid grid-cols-4 gap-8 mt-10">
+      <div data-cy="coffee-list" className="w-full grid grid-cols-4 gap-8 mt-10">
         {DataProducts.map(
           (product) => <Coffee key={product.id} product={product} />
         )}

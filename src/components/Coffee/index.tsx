@@ -1,3 +1,5 @@
+'use client'
+
 import { Minus, Plus, ShoppingCart } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useContext, useState } from "react";
@@ -41,11 +43,11 @@ export default function Coffee({ product }: { product: Product }) {
         </div>
         <div className="flex gap-2">
           <div className="flex gap-2 justify-center items-center p-2 rounded-md bg-button text-text border-0">
-            <Minus size={16} color='#7f46f7' onClick={decrease} />
+            <Minus data-cy="minus" size={16} color='#7f46f7' onClick={decrease} />
             <p className="text-title text-base leading-6">{counter}</p>
-            <Plus size={16} color='#7f46f7' onClick={increase} />
+            <Plus data-cy="plus" size={16} color='#7f46f7' onClick={increase} />
           </div>
-          <button className="flex p-2 justify-center items-center gap-2 rounded-md bg-purple-dark border-0" type="submit" onClick={addToCart}>
+          <button data-cy="add-cart" className="flex p-2 justify-center items-center gap-2 rounded-md bg-purple-dark border-0" type="submit" onClick={addToCart}>
             <ShoppingCart size={24} color="#faf9f9" weight="fill" />
           </button>
         </div>
