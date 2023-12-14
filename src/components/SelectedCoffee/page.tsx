@@ -21,11 +21,11 @@ export default function SelectedCoffee({ product }: { product: Product }) {
               <h3 className="text-base text-subtitle">{product.title}</h3>
               <div className="flex flex-row gap-2">
                 <div className="flex gap-2 justify-center items-center p-1 rounded-md bg-button text-text">
-                  <Minus size={14} color='#7f46f7' onClick={() => decreaseQuantity(product.id)} />
+                  <Minus data-cy="minus-btn" size={14} color='#7f46f7' onClick={() => decreaseQuantity(product.id)} />
                   <p className="text-title text-base leading-6">{product.quantity}</p>
-                  <Plus size={14} color='#7f46f7' onClick={() => increaseQuantity(product.id)} />
+                  <Plus data-cy="plus-btn" size={14} color='#7f46f7' onClick={() => increaseQuantity(product.id)} />
                 </div>
-                <button type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md" onClick={() => removeProduct(product.id)}>
+                <button data-cy="remover-btn" type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md" onClick={() => removeProduct(product.id)}>
                   <Trash size={16} color='#7f46f7' />
                   <p className="text-text text-xs">REMOVER</p>
                 </button>
@@ -48,7 +48,7 @@ export default function SelectedCoffee({ product }: { product: Product }) {
           <p className="text-xl font-bold text-subtitle">Total</p>
           <p className="text-xl font-bold text-subtitle">R$ <span>{totalOrderValue.toFixed(2)}</span></p>
         </div>
-        <Link href="/success" type="submit" className="flex items-center justify-center bg-yellow hover:bg-yellow-dark p-3 rounded-md">
+        <Link href="/success" type="submit" data-cy="confirmar-btn" className="flex items-center justify-center bg-yellow hover:bg-yellow-dark p-3 rounded-md">
           <p className="text-white text-sm font-bold">CONFIRMAR PEDIDO</p>
         </Link>
       </div>

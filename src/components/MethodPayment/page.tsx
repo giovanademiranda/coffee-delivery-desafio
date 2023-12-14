@@ -12,15 +12,15 @@ export default function MethodPayment() {
           </div>
         </div>
         <div className="w-full flex flex-row gap-4">
-          <button type="submit" className="w-[33%] flex flex-row p-4 gap-1 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple bg-button rounded-lg">
+          <button type="submit" data-cy="credito" className="w-[33%] flex flex-row p-4 gap-1 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple bg-button rounded-lg">
             <CreditCard size={20} color='#7f46f7' />
             <p className="text-sm text-text">CARTÃO DE CRÉDITO</p>
           </button>
-          <button type="submit" className="w-[33%] flex flex-row p-4 gap-1 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple  bg-button rounded-lg">
+          <button type="submit" data-cy="debito" className="w-[33%] flex flex-row p-4 gap-1 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple  bg-button rounded-lg">
             <Bank size={20} color='#7f46f7' />
             <p className="text-sm text-text">CARTÃO DE DÉBITO</p>
           </button>
-          <button type="submit" className="w-[33%] flex flex-row p-4 gap-3 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple  bg-button rounded-lg">
+          <button type="submit" data-cy="dinheiro" className="w-[33%] flex flex-row p-4 gap-3 items-center justify-start hover:bg-purple-light border-2 focus:bg-purple-light focus:border-purple  bg-button rounded-lg">
             <Money size={20} color='#7f46f7' />
             <p className="text-sm text-text">DINHEIRO</p>
           </button>

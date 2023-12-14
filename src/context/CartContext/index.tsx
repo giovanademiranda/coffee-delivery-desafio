@@ -23,19 +23,22 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useStateLocal();
 
   const addProduct = (id: number, quantity: number) => {
-    const product = getProductById(id);
-    if (product) {
-      const existingProduct = cart.find(item => item.id === id);
-      if (existingProduct) {
-        setCart(cart.map(item =>
-          item.id === id ? { ...item, quantity: item.quantity + quantity } : item
-        ));
+    setCart((currentCart) => {
+      const productExists = currentCart.find((product) => product.id === id);
+      if (productExists) {
+        return currentCart.map((product) =>
+          product.id === id ? { ...product, quantity: product.quantity + quantity } : product
+        );
       } else {
-        setCart([...cart, { ...product, quantity }]);
+        const newProduct = getProductById(id);
+        if (newProduct) {
+          return [...currentCart, { ...newProduct, quantity }];
+        }
+        return currentCart;
       }
-    }
-    return;
-  }
+    });
+  };
+
 
   const removeProduct = (id: number) => {
     setCart((currentCart) => currentCart.filter((product) => product.id !== id));

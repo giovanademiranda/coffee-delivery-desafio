@@ -59,23 +59,60 @@ export default function FormPayment() {
       </div>
       <form className="flex flex-col gap-4">
         <MaskedInput
-          mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]} className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" name="CEP" id="CEP" placeholder="CEP" required value={cep} onChange={handleCEP} onBlur={searchCEP} />
-        <input className="p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
-          type="text"
-          name="rua"
-          id="RUA"
-          placeholder="RUA"
+          className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+          mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
+          data-cy="cep"
+          placeholder="CEP"
+          value={cep}
+          onChange={handleCEP}
+          onBlur={searchCEP}
           required
+        />
+        <input
+          className="p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+          data-cy="rua"
+          placeholder="RUA"
           value={endereco.rua}
-          onChange={handleEnderecoChange} />
+          onChange={handleEnderecoChange}
+          required
+        />
         <div className="flex gap-3">
-          <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="number" name="Numero" id="Numero" placeholder="Número" required />
-          <input className="w-[60%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="Complemento" id="Complemento" placeholder="Complemento" />
+          <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+            type="number"
+            data-cy="numero"
+            placeholder="Número"
+            required
+          />
+          <input className="w-[60%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+            data-cy="complemento"
+            placeholder="Complemento"
+            required
+          />
         </div>
         <div className="flex gap-3">
-          <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="Bairro" id="Bairro" placeholder="Bairro" required value={endereco.bairro} onChange={handleEnderecoChange} />
-          <input className="w-[50%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="Cidade" id="Cidade" placeholder="Cidade" required value={endereco.cidade} onChange={handleEnderecoChange} />
-          <input className="w-[10%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="UF" id="UF" placeholder="UF" required value={endereco.uf} onChange={handleEnderecoChange} />
+          <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+            data-cy="bairro"
+            placeholder="Bairro"
+            value={endereco.bairro}
+            onChange={handleEnderecoChange}
+            required
+          />
+          <input
+            className="w-[50%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+            data-cy="cidade"
+            placeholder="Cidade"
+            value={endereco.cidade}
+            onChange={handleEnderecoChange}
+            required
+          />
+          <input
+            className="w-[10%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+            data-cy="uf"
+            placeholder="UF"
+            value={endereco.uf}
+            onChange={handleEnderecoChange}
+            required
+          />
         </div>
       </form>
     </div>
