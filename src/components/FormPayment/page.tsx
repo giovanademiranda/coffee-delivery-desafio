@@ -3,7 +3,7 @@ import { ChangeEvent, useState } from "react";
 import { MapPinLine } from "@phosphor-icons/react";
 import cepBrasil from 'cep-promise';
 import React from "react";
-import InputMask from "react-input-mask";
+import MaskedInput from 'react-text-mask';
 
 export default function FormPayment() {
   const [cep, setCEP] = useState('');
@@ -57,8 +57,9 @@ export default function FormPayment() {
           <p className="text-sm text-text">Informe o endereço onde deseja receber seu pedido</p>
         </div>
       </div>
-      <div className="flex flex-col gap-4">
-        <InputMask mask="99999-999" className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" name="CEP" id="CEP" placeholder="CEP" required value={cep} onChange={handleCEP} onBlur={searchCEP} />
+      <form className="flex flex-col gap-4">
+        <MaskedInput
+          mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]} className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" name="CEP" id="CEP" placeholder="CEP" required value={cep} onChange={handleCEP} onBlur={searchCEP} />
         <input className="p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
           type="text"
           name="rua"
@@ -76,7 +77,7 @@ export default function FormPayment() {
           <input className="w-[50%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="Cidade" id="Cidade" placeholder="Cidade" required value={endereco.cidade} onChange={handleEnderecoChange} />
           <input className="w-[10%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple" type="text" name="UF" id="UF" placeholder="UF" required value={endereco.uf} onChange={handleEnderecoChange} />
         </div>
-      </div>
+      </form>
     </div>
   )
 }
