@@ -47,7 +47,7 @@ export default function Home() {
       <div className="flex w-full">
         <h2 className='font-Baloo font-bold text-3xl text-subtitle'>Nossos cafés</h2>
       </div>
-      <div data-cy="coffee-list" className="w-full grid-coffee mt-10 justify-between gap-4">
+      <div data-cy="coffee-list" className="w-full grid-coffee mt-10 justify-between gap-y-4">
         {DataProducts.map(
           (product) => <Coffee key={product.id} product={product} />
         )}
