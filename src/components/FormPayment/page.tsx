@@ -1,8 +1,8 @@
-import { ChangeEvent, useState } from "react";
+'use client'
 
 import { MapPinLine } from "@phosphor-icons/react";
 import cepBrasil from 'cep-promise';
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import MaskedInput from 'react-text-mask';
 
 export default function FormPayment() {

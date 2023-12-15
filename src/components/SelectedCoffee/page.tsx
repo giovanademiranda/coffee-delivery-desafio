@@ -1,3 +1,5 @@
+'use client'
+
 import { CartContext } from "@/context/CartContext";
 import { Minus, Plus, Trash } from "@phosphor-icons/react";
 import { useContext } from "react";

@@ -3,11 +3,17 @@
 import { CartContext } from "@/context/CartContext";
 import { ShoppingCart } from "@phosphor-icons/react";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function Cart() {
   const { cart } = useContext(CartContext);
-  const totalItems = cart.reduce((total, product) => total + product.quantity, 0);
+  const [totalItems, setTotalItems] = useState(0);
+
+  useEffect(() => {
+    if (cart) {
+      setTotalItems(cart.reduce((total, product) => total + product.quantity, 0));
+    }
+  }, [cart]);
 
   return (
     <Link data-cy="cart" href="/checkout" className="flex relative p-2 justify-center items-center gap-1 m-2 rounded-md bg-yellow-light">

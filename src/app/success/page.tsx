@@ -2,7 +2,6 @@
 
 import { CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react";
 import Image from "next/image";
-import React from "react";
 import illustration from '../../assets/illustration.svg';
 
 export default function Success() {
