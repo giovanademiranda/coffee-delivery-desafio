@@ -1,8 +1,8 @@
-import { ChangeEvent, useState } from "react";
+'use client'
 
 import { MapPinLine } from "@phosphor-icons/react";
 import cepBrasil from 'cep-promise';
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import MaskedInput from 'react-text-mask';
 
 export default function FormPayment() {
@@ -49,7 +49,7 @@ export default function FormPayment() {
   }
 
   return (
-    <div className="w-full flex flex-col bg-card p-10 rounded-lg">
+    <div className="w-full flex flex-col bg-card p-5 md:p-10 rounded-lg">
       <div className="flex flex-row pb-8">
         <MapPinLine size={24} color='#c47e16' />
         <div className="flex flex-col pl-2 gap-1">
@@ -59,7 +59,7 @@ export default function FormPayment() {
       </div>
       <form className="flex flex-col gap-4">
         <MaskedInput
-          className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+          className="md:w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
           mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
           data-cy="cep"
           placeholder="CEP"
@@ -76,21 +76,21 @@ export default function FormPayment() {
           onChange={handleEnderecoChange}
           required
         />
-        <div className="flex gap-3">
-          <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+        <div className="flex flex-col md:flex-row gap-3">
+          <input className="md:w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
             type="number"
             data-cy="numero"
             placeholder="Número"
             required
           />
-          <input className="w-[60%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+          <input className="md:w-[60%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
             data-cy="complemento"
             placeholder="Complemento"
             required
           />
         </div>
-        <div className="flex gap-3">
-          <input className="w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+        <div className="flex flex-col md:flex-row gap-3">
+          <input className="md:w-[40%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
             data-cy="bairro"
             placeholder="Bairro"
             value={endereco.bairro}
@@ -98,7 +98,7 @@ export default function FormPayment() {
             required
           />
           <input
-            className="w-[50%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+            className="md:w-[50%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
             data-cy="cidade"
             placeholder="Cidade"
             value={endereco.cidade}
@@ -106,7 +106,7 @@ export default function FormPayment() {
             required
           />
           <input
-            className="w-[10%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
+            className="md:w-[10%] p-3 bg-input border-2 border-button text-label rounded-md focus:outline-none focus:border-purple"
             data-cy="uf"
             placeholder="UF"
             value={endereco.uf}

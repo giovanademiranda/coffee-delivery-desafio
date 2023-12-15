@@ -26,15 +26,15 @@ export default function Coffee({ product }: { product: Product }) {
   };
 
   return (
-    <div className="flex flex-col w-72 h-80 justify-center items-center rounded-tr-3xl rounded-bl-3xl rounded-sm bg-card p-5">
-      <Image src={product.image} width={100} height={100} alt="Café" />
-      <div className="flex flex-col w-full py-4 items-center">
-        <div className="flex gap-2 mb-2">{product.tags.map((tag, product) => <p className="flex justify-center items-center py-1 px-2 text-yellow-dark font-bold text-xs rounded-full bg-yellow-light" key={product}>{tag.toUpperCase()}</p>)}
+    <div className="flex flex-col w-[68] h-80 justify-center items-center rounded-tr-3xl rounded-bl-3xl rounded-sm bg-card p-5">
+      <Image className="relative -top-11" src={product.image} width={100} height={100} alt="Café" />
+      <div className="flex flex-col w-full mb-1 items-center relative -top-5">
+        <div className="flex gap-2 mb-4">{product.tags.map((tag, product) => <p className="flex justify-center items-center py-1 px-2 text-yellow-dark font-bold text-xs rounded-full bg-yellow-light" key={product}>{tag.toUpperCase()}</p>)}
         </div>
-        <h3 className="text-subtitle text-center font-Baloo text-lg font-bold leading-7">{product.title}</h3>
+        <h3 className="text-subtitle text-center font-Baloo text-lg font-bold leading-7 mb-1">{product.title}</h3>
         <p className="text-label text-center text-sm leading-7">{product.description}</p>
       </div>
-      <div className="flex gap-9 justify-between">
+      <div className="w-full flex justify-between">
         <div className="flex font-Baloo text-2xl font-bold leading-6 text-text">
           <span className="flex justify-center items-center">
             <p className="text-text text-sm leading-7 font-bold">R$</p>

@@ -1,3 +1,5 @@
+'use client'
+
 import { CartContext } from "@/context/CartContext";
 import { Minus, Plus, Trash } from "@phosphor-icons/react";
 import { useContext } from "react";
@@ -12,7 +14,7 @@ export default function SelectedCoffee({ product }: { product: Product }) {
   const totalOrderValue = totalItemsValue + 3.50;
 
   return (
-    <div className="w-full flex flex-col bg-card p-10 rounded-tr-3xl rounded-bl-3xl rounded-md">
+    <div className="w-full flex flex-col bg-card p-5 md:p-10 rounded-tr-3xl rounded-bl-3xl rounded-md">
       {cart.map((product, index) => (
         <div key={index} className="flex flex-row border-b-2 pb-6 pt-4 justify-between">
           <div className="flex gap-5">
@@ -27,7 +29,7 @@ export default function SelectedCoffee({ product }: { product: Product }) {
                 </div>
                 <button data-cy="remover-btn" type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md" onClick={() => removeProduct(product.id)}>
                   <Trash size={16} color='#7f46f7' />
-                  <p className="text-text text-xs">REMOVER</p>
+                  <p className="text-text text-xs hidden md:block">REMOVER</p>
                 </button>
               </div>
             </div>
