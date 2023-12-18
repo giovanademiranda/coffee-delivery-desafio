@@ -27,32 +27,3 @@ export default function useStateLocal(): [CartProduct[], Dispatch<SetStateAction
 
   return [cart, setCart];
 }
-
-/*
-const [mounted, setMounted] = useState(false);
-  const [localWrited, setLocalWrited] = useState(false);
-  const [cart, setCart] = useState<CartProduct[]>(() => {
-    if (mounted) {
-      const storedCart = localStorage.getItem('coffee-delivery-cart');
-      setLocalWrited(true);
-      return storedCart ? JSON.parse(storedCart) : [];
-    }
-    return [];
-  });
-
-  useEffect(() => setMounted(true), []);
-
-  useEffect(() => {
-    const storedCart = localStorage.getItem('coffee-delivery-cart');
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
-
-  useEffect(() => {
-    if (mounted && localWrited) {
-      localStorage.setItem('coffee-delivery-cart', JSON.stringify(cart));
-    }
-  }, [cart, localWrited, mounted]);
-*/
-
