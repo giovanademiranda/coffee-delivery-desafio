@@ -43,11 +43,15 @@ export default function Coffee({ product }: { product: Product }) {
         </div>
         <div className="flex gap-2">
           <div className="flex gap-2 justify-center items-center p-2 rounded-md bg-button text-text border-0">
-            <Minus data-cy="minus" size={16} color='#7f46f7' onClick={decrease} />
+            <div className="bg-button p-0.5 cursor-pointer rounded-md hover:bg-hover">
+              <Minus data-cy="minus" size={16} color='#7f46f7' onClick={decrease} />
+            </div>
             <p className="text-title text-base leading-6">{counter}</p>
-            <Plus data-cy="plus" size={16} color='#7f46f7' onClick={increase} />
+            <div className="bg-button p-0.5 cursor-pointer rounded-md hover:bg-hover">
+              <Plus data-cy="plus" size={16} color='#7f46f7' onClick={increase} className="cursor-pointer" />
+            </div>
           </div>
-          <button data-cy="add-cart" className="flex p-2 justify-center items-center gap-2 rounded-md bg-purple-dark border-0" type="submit" onClick={addToCart}>
+          <button data-cy="add-cart" className="flex p-2 justify-center items-center gap-2 rounded-md bg-purple-dark hover:bg-purple border-0" type="submit" onClick={addToCart}>
             <ShoppingCart size={24} color="#faf9f9" weight="fill" />
           </button>
         </div>
