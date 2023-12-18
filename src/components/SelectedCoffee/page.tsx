@@ -23,11 +23,15 @@ export default function SelectedCoffee({ product }: { product: Product }) {
               <h3 className="text-base text-subtitle">{product.title}</h3>
               <div className="flex flex-row gap-2">
                 <div className="flex gap-2 justify-center items-center p-1 rounded-md bg-button text-text">
-                  <Minus data-cy="minus-btn" size={14} color='#7f46f7' onClick={() => decreaseQuantity(product.id)} />
+                  <div className="bg-button p-0.5 cursor-pointer rounded-md hover:bg-hover">
+                    <Minus data-cy="minus-btn" size={14} color='#7f46f7' onClick={() => decreaseQuantity(product.id)} />
+                  </div>
                   <p className="text-title text-base leading-6">{product.quantity}</p>
-                  <Plus data-cy="plus-btn" size={14} color='#7f46f7' onClick={() => increaseQuantity(product.id)} />
+                  <div className="bg-button p-0.5 cursor-pointer rounded-md hover:bg-hover">
+                    <Plus data-cy="plus-btn" size={14} color='#7f46f7' onClick={() => increaseQuantity(product.id)} />
+                  </div>
                 </div>
-                <button data-cy="remover-btn" type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md" onClick={() => removeProduct(product.id)}>
+                <button data-cy="remover-btn" type="submit" className="flex flex-row items-center gap-1 px-2 bg-button rounded-md hover:bg-hover" onClick={() => removeProduct(product.id)}>
                   <Trash size={16} color='#7f46f7' />
                   <p className="text-text text-xs hidden md:block">REMOVER</p>
                 </button>
